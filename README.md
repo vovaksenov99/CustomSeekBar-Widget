@@ -8,7 +8,7 @@ This is custom seekBar for android project with step. Add CustomSeekBar.java wit
 
 ## Java code
 ```java
-    CustomSeekBar t =(CustomSeekBar)findViewById(R.id.durationview1);
+    CustomSeekBar t =(CustomSeekBar)findViewById(R.id.custom);
 		t.set_interval(new String[]{"step 1","step 2","step 3","step 4","step 5"});
 		t.setPadding(100,10,100,0);
 		t.setProgress(2);
@@ -16,7 +16,7 @@ This is custom seekBar for android project with step. Add CustomSeekBar.java wit
 ## XmlCode
 In xml file you need to declarate view. You can do it next way:
 
-```xml
+```
 	<!your package name!.CustomSeekBar
 		android:id="@+id/custom"
 		android:layout_width="match_parent"
