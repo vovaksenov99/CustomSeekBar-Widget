@@ -1,7 +1,7 @@
 
 # How To use?
 
-This is custom seekBar for android project with step. 
+This is custom seekBar for android project with step. Add CustomSeekBar.java with your package to you project and use wiget free.
 
 ![default](https://cloud.githubusercontent.com/assets/13554528/21932841/69d04fb8-d9c4-11e6-92f1-0b3418b6ba97.PNG)
 
@@ -17,7 +17,7 @@ This is custom seekBar for android project with step.
 In xml file you need to declarate view. You can do it next way:
 
 ```xml
-       <com.akscorp.TeamDay.CustomSeekBar
+       <!your package name!.CustomSeekBar
                         android:id="@+id/custom"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
