@@ -17,8 +17,11 @@ This is custom seekBar for android project with step. Add CustomSeekBar.java wit
 In xml file you need to declarate view. You can do it next way:
 
 ```xml
-       <!your package name!.CustomSeekBar
-                        android:id="@+id/custom"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content" />
+<myxml>
+
+	<!your package name!.CustomSeekBar
+		android:id="@+id/custom"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" />
+		</myxml>
 ```
