@@ -9,7 +9,7 @@ This is custom seekBar for android project with step. Add CustomSeekBar.java wit
 ## Java code
 ```java
     CustomSeekBar t =(CustomSeekBar)findViewById(R.id.custom);
-		t.set_interval(new String[]{"step 1","step 2","step 3","step 4","step 5"});
+		t.setInterval(new String[]{"step 1","step 2","step 3","step 4","step 5"});
 		t.setPadding(100,10,100,0);
 		t.setProgress(2);
 ```
