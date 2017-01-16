@@ -1,5 +1,3 @@
-
-
 import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -28,7 +26,7 @@ public class CustomSeekBar extends LinearLayout {
         return (Activity) context;
     }
 
-    public void set_interval(String[] list)
+    public void setInterval(String[] list)
     {
 
         this.list = list;
@@ -65,10 +63,10 @@ public class CustomSeekBar extends LinearLayout {
         TextView tt = new TextView(context);
         tt.setText(list[0]);
         tt.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
-        int f_padding = tt.getMeasuredWidth()+5;
+        int f_padding = tt.getMeasuredWidth()/2;
         tt.setText(list[list.length - 1]);
         tt.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
-        int s_padding = tt.getMeasuredWidth()+5;
+        int s_padding = tt.getMeasuredWidth()/2;
         seekBar.setPadding(f_padding,0,s_padding,0);
 
         float last_sum = 0;
