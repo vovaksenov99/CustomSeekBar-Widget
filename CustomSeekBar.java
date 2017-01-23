@@ -1,3 +1,5 @@
+package com.akscorp.TeamDay;
+
 import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -13,7 +15,8 @@ import android.widget.TextView;
 public class CustomSeekBar extends LinearLayout {
 
     Context context;
-    boolean Interval_enable = false;
+    boolean Interval_enable = false,SeekBarEnable = true;
+    int current_progress = 0;
     public CustomSeekBar(Context context, AttributeSet attrs) {
         super(context, attrs);
         this.context = context;
@@ -49,6 +52,25 @@ public class CustomSeekBar extends LinearLayout {
             {
                 Create_SeekBar_standart();
             }
+            getSeekBar().setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                @Override
+                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                    if(!SeekBarEnable)
+                        getSeekBar().setProgress(current_progress);
+                    else
+                        current_progress = progress;
+                }
+
+                @Override
+                public void onStartTrackingTouch(SeekBar seekBar) {
+
+                }
+
+                @Override
+                public void onStopTrackingTouch(SeekBar seekBar) {
+
+                }
+            });
         }
     }
 
@@ -94,8 +116,6 @@ public class CustomSeekBar extends LinearLayout {
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
-
-
         final int height = getMeasuredHeight();
         final int width = getMeasuredWidth();
         setMeasuredDimension(width,height);
@@ -105,12 +125,18 @@ public class CustomSeekBar extends LinearLayout {
     }
 
     public void setProgress(int progress) {
+
         getSeekBar().setProgress(progress);
+        current_progress = progress;
     }
     public void setOnSeekBarChangeListener(SeekBar.OnSeekBarChangeListener onSeekBarChangeListener) {
         getSeekBar().setOnSeekBarChangeListener(onSeekBarChangeListener);
     }
     private SeekBar getSeekBar() {
         return seekBar;
+    }
+    public void setSeekBarEnable(boolean enabled)
+    {
+       SeekBarEnable = enabled;
     }
 }
