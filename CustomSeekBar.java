@@ -40,7 +40,8 @@ public class CustomSeekBar extends LinearLayout {
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        if(changed)
+        super.onLayout(changed, l, t, r, b);
+        if(changed && getChildCount()==0)
         {
             removeAllViews();
             if(Interval_enable)
