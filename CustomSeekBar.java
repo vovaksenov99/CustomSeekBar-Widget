@@ -40,37 +40,40 @@ public class CustomSeekBar extends LinearLayout {
 
     @Override
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
-        super.onLayout(changed, l, t, r, b);
-        if(changed && getChildCount()==0)
+
+        try {
+            super.onLayout(changed, l, t, r, b);
+            if (changed && getChildCount() == 0) {
+                removeAllViews();
+                if (Interval_enable) {
+                    Create_SeekBar_with_interval();
+                } else {
+                    Create_SeekBar_standart();
+                }
+                getSeekBar().setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                    @Override
+                    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                        if (!SeekBarEnable)
+                            getSeekBar().setProgress(current_progress);
+                        else
+                            current_progress = progress;
+                    }
+
+                    @Override
+                    public void onStartTrackingTouch(SeekBar seekBar) {
+
+                    }
+
+                    @Override
+                    public void onStopTrackingTouch(SeekBar seekBar) {
+
+                    }
+                });
+            }
+        }
+        catch (Exception e)
         {
-            removeAllViews();
-            if(Interval_enable)
-            {
-                Create_SeekBar_with_interval();
-            }
-            else
-            {
-                Create_SeekBar_standart();
-            }
-            getSeekBar().setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
-                @Override
-                public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    if(!SeekBarEnable)
-                        getSeekBar().setProgress(current_progress);
-                    else
-                        current_progress = progress;
-                }
 
-                @Override
-                public void onStartTrackingTouch(SeekBar seekBar) {
-
-                }
-
-                @Override
-                public void onStopTrackingTouch(SeekBar seekBar) {
-
-                }
-            });
         }
     }
 
