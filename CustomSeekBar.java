@@ -89,6 +89,7 @@ public class CustomSeekBar extends LinearLayout {
         tt.setText(list[0]);
         tt.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
         int f_padding = tt.getMeasuredWidth()/2;
+        tt.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
         tt.setText(list[list.length - 1]);
         tt.measure(MeasureSpec.UNSPECIFIED, MeasureSpec.UNSPECIFIED);
         int s_padding = tt.getMeasuredWidth()/2;
